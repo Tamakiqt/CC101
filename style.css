@@ -4,6 +4,8 @@
   --bg-color: #333333;
   --bg-color-soft: #808080;
   --bg-color-hard: #262626;
+  --fg-color: #ffffff;
+  --fg-secondary-color: #000000;
 
   --primary-color: #0000FF;
   --secondary-color: #FFFF00;
@@ -11,7 +13,10 @@
   --warning-color: #ff7800;
   --error-color: #FF0000;
 
-  --fg-color: #ffffff;
+  --sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
 }
 
 * { box-sizing: border-box; }
@@ -20,7 +25,7 @@ body {
   margin: 0;
   font-family: 'Assistant', sans-serif;
   font-size: 2ch;
-  background-color: var(--bg-color);
+  line-height: 1;
   color: var(--fg-color);
 }
 
@@ -28,42 +33,50 @@ img, video, canvas, audio, iframe, embed, object {
   display: block;
 }
 
+a { text-decoration: none; color: var(--fg-color); }
+p { margin: 0; }
 h1, h2, h3, h4 { margin: 0; font-weight: 800; }
 h1 { font-size: 6ch; }
 h2 { font-size: 3.5ch; }
 h3 { font-size: 2.5ch; }
 h4 { font-size: 2ch; }
 
-button {
+.btn {
   border: none;
   border-radius: 4px;
   padding: 0.7rem 1.7rem;
   cursor: pointer;
 }
 
-button.sm { padding: 0.4rem 1.2rem; }
-button.xl { padding: 0.9rem 2.2rem; }
+.btn.sm { padding: 0.4rem 1.2rem; }
+.btn.xl { padding: 0.9rem 2.2rem; }
 
-button.primary {
+.btn.primary {
   background-color: var(--primary-color);
   color: var(--fg-color);
 }
 
-button.secondary {
+.btn.secondary {
   background-color: var(--secondary-color);
 }
 
-button.success {
+.btn.success {
   background-color: var(--success-color);
 }
 
-button.warning {
+.btn.warning {
   background-color: var(--warning-color);
 }
 
-button.error {
+.btn.error {
   background-color: var(--error-color);
   color: var(--fg-color);
+}
+
+.underline {
+  display: block;
+  height: 0.2rem;
+  margin-top: 0.9rem;
 }
 
 .container {
@@ -78,28 +91,116 @@ button.error {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media (min-width: 640px) {
+@media (min-width: var(--sm)) {
   .container {
-    max-width: 640px;
+    max-width: var(--sm);
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: var(--md)) {
   .container {
-    max-width: 768px;
+    max-width: var(--md);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: var(--lg)) {
   .container {
-    max-width: 1024px;
+    max-width: var(--lg);
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: var(--xl)) {
   .container {
-    max-width: 1280px;
+    max-width: var(--xl);
   }
 }
 
 /* End Base Styles */
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.sidebar {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  width: calc(var(--sm) / 2);
+  height: 100%;
+  background-image: url('/static/footprint.png');
+  background-size: var(--lg);
+  padding: 1rem 2rem;
+}
+
+.sidebar__text {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar__links {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar__links a {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: solid 1px var(--primary-color);
+  border-radius: 9999px;
+  width: fit-content;
+}
+
+.hero {
+  position: relative;
+  background-image: url('/static/starry-sea.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  padding: 5rem 10rem 0rem 5rem;
+}
+
+.hero__card {
+  border-radius: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6rem;
+}
+
+.hero__card__img {
+  background-image: url('/static/footprint.png');
+  background-repeat: no-repeat;
+  background-size: var(--md);
+  object-fit: cover;
+  height: 6rem;
+}
+
+.hero__card__contents {
+  background-color: var(--fg-secondary-color);
+  padding: 1rem 8px 1rem;
+  text-align: end;
+}
+
+.hero__card__contents p {
+  margin-top: 0.8rem;
+  font-size: 1.5ch;
+  font-weight: 700;
+}
+
+.hero__gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.hero__description {
+  margin-top: 1rem;
+}
