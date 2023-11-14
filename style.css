@@ -213,23 +213,7 @@ h4 { font-size: 2ch; }
   }
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: var(--sm);
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: var(--md);
-  }
-}
-
 @media (min-width: 1024px) {
-  .container {
-    max-width: var(--lg);
-  }
-
   .main {
     grid-template-columns: 1fr auto;
   }
@@ -247,10 +231,3 @@ h4 { font-size: 2ch; }
     display: block;
   }
 }
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: var(--xl);
-  }
-}
-
