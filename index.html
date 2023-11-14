@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art History</title>
-</head>
-<body>
-    
-</body>
+
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet" />
+
+    <style>
+      body { font-family: 'Assistant', sans-serif; }
+    </style>
+
+    <script src="/tailwind/tailwind.js"></script>
+
+    <title>Van Gogh</title>
+  </head>
+
+  <body class="text-black bg-zinc-800">
+    <div id="fullpage">
+      <div class="relative grid grid-cols-1 md:grid-cols-[auto_1fr]">
+        <!-- Floating Card-->
+        <div class="absolute top-0 right-0 rounded-full w-24 z-10">
+          <div class="h-24 bg-[length:640px] hidden lg:block" style="background-image: url('/static/footprint.png');"></div>
+
+          <div class="bg-black text-white text-end py-2 pr-2">
+            <p class="text-xl">
+            <span>Van</span> <br>
+            <span>Gogh</span> <br>
+            <span>Website</span>
+            </p>
+            <p class="text-sm mt-1">France</p>
+          </div>
+        </div>
+
+        <!-- Side Bar-->
+        <div class="w-full h-screen bg-[length:1024px] text-[#0000FF] max-w-full md:max-w-xs py-12 px-8" style="background-image: url('/static/footprint.png');">
+          <div class="space-y-6">
+            <h2 class="text-3xl">
+              <span>Explore</span> <br>
+              <span>the life of</span> <br>
+              <span>Van Gogh</span>
+              <span class="block mt-2 w-20 h-1 bg-[#0000FF]"></span>
+            </h2>
+            <p>Van Gogh, a genius in art, sold only one painting during his life, "The Red Vineyard" (1888). Now, his works are some of the most valuable and sought-after in the world.</p>
+          </div>
+
+          <div class="flex flex-col gap-y-4 mt-6">
+            <a href="/timeline" class="py-3 px-4 w-fit border border-[#0000FF] rounded-full">Van Gogh's Timeline</a>
+            <a href="/history" class="py-3 px-4 w-fit border border-[#0000FF] rounded-full">Read History</a>
+            <a href="/gallery" class="py-3 px-4 w-fit border border-[#0000FF] rounded-full">Art Gallery</a>
+          </div>
+        </div>
+
+        <!-- Hero-->
+        <div class="hidden md:block relative h-screen bg-no-repeat bg-cover" style="background-image: url('/static/starry-sea.png');">
+          <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent via-transparent to-black"></div>
+
+          <div class="text-white mt-20 ml-20">
+            <h1 class="text-5xl font-bold">
+              <span>Vincent</span> <br>
+              <span>Van Gogh</span>
+              <span class="block mt-3 l-2 w-36 h-1 bg-white"></span>
+            </h1>
+            <p class="text-2xl font-semibold max-w-2xl mt-4">Immerse yourself in the vibrant world of Vincent van Gogh, a visionary Dutch painter renowned for his emotional brushstrokes and iconic masterpieces.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

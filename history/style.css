@@ -1,0 +1,141 @@
+/* Base Styles */
+
+:root {
+  --bg-color: #333333;
+  --bg-color-soft: #808080;
+  --bg-color-hard: #262626;
+  --fg-color: #ffffff;
+  --fg-secondary-color: #000000;
+
+  --primary-color: #0000FF;
+  --secondary-color: #FFFF00;
+  --success-color: #32CD32;
+  --warning-color: #ff7800;
+  --error-color: #FF0000;
+
+  --sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  font-family: 'Assistant', sans-serif;
+  font-size: 2ch;
+  line-height: 1;
+  margin: 0;
+}
+
+img, video, canvas, audio, iframe, embed, object {
+  max-width: 100%;
+  display: block;
+}
+
+a { text-decoration: none; color: var(--fg-color); }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; font-weight: 800; }
+h1 { font-size: 6ch !important; }
+h2 { font-size: 3.5ch !important; }
+h3 { font-size: 2.5ch !important; }
+h4 { font-size: 2ch !important; }
+
+.btn {
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.7rem;
+  cursor: pointer;
+}
+
+.btn.sm { padding: 0.4rem 1.2rem; }
+.btn.xl { padding: 0.9rem 2.2rem; }
+
+.btn.primary {
+  background-color: var(--primary-color);
+  color: var(--fg-color);
+}
+
+.btn.secondary {
+  background-color: var(--secondary-color);
+}
+
+.btn.success {
+  background-color: var(--success-color);
+}
+
+.btn.warning {
+  background-color: var(--warning-color);
+}
+
+.btn.error {
+  background-color: var(--error-color);
+  color: var(--fg-color);
+}
+
+.underline {
+  display: block;
+  height: 0.2rem;
+  margin-top: 0.9rem;
+}
+
+.container {
+  max-width: var(--md);
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--bg-color-hard);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* End Base Styles */
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background-image: url('/static/house.png');
+  background-size: cover;
+  height: calc(100vh / 1.5);
+  text-align: center;
+  padding: 1rem;
+}
+
+.hero__home-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  place-items: center;
+  gap: 0.5rem;
+  background-color: var(--fg-color);
+  color: var(--fg-secondary-color);
+  border-radius: 9999px;
+  margin: 1rem;
+  animation: left-right 3s ease-in-out infinite;
+}
+
+.section {
+  padding: 1rem 0;
+}
+
+.section img {
+  aspect-ratio: 16 / 9;
+  margin: 1rem 0;
+  object-fit: cover;
+}
+
+@keyframes left-right {
+  0%, 100%{
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+}
