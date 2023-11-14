@@ -156,7 +156,7 @@ h4 { font-size: 2ch; }
 
 .hero {
   position: relative;
-  background-image: url('/static/plain-field.png');
+  background-image: url('/static/starry-sea.png');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
