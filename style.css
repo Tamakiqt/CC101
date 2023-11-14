@@ -1,5 +1,105 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Base Styles */
+
+:root {
+  --bg-color: #333333;
+  --bg-color-soft: #808080;
+  --bg-color-hard: #262626;
+
+  --primary-color: #0000FF;
+  --secondary-color: #FFFF00;
+  --success-color: #32CD32;
+  --warning-color: #ff7800;
+  --error-color: #FF0000;
+
+  --fg-color: #ffffff;
 }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Assistant', sans-serif;
+  font-size: 2ch;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+img, video, canvas, audio, iframe, embed, object {
+  display: block;
+}
+
+h1, h2, h3, h4 { margin: 0; font-weight: 800; }
+h1 { font-size: 6ch; }
+h2 { font-size: 3.5ch; }
+h3 { font-size: 2.5ch; }
+h4 { font-size: 2ch; }
+
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.7rem;
+  cursor: pointer;
+}
+
+button.sm { padding: 0.4rem 1.2rem; }
+button.xl { padding: 0.9rem 2.2rem; }
+
+button.primary {
+  background-color: var(--primary-color);
+  color: var(--fg-color);
+}
+
+button.secondary {
+  background-color: var(--secondary-color);
+}
+
+button.success {
+  background-color: var(--success-color);
+}
+
+button.warning {
+  background-color: var(--warning-color);
+}
+
+button.error {
+  background-color: var(--error-color);
+  color: var(--fg-color);
+}
+
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--bg-color-hard);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* End Base Styles */
